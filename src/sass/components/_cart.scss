@@ -1,0 +1,99 @@
+.cart{
+    @include flex(flex-start, flexstart);
+
+    @include mobile{
+        flex-wrap: wrap
+    };
+    padding-top: 50px;
+
+    &_info{
+        width: 30%;
+        margin-right: 30px;
+        padding: 20px;
+        position: sticky;
+        box-shadow: $box-shadow;
+      
+        @include mobile{
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 30px;
+            position: unset;
+        }
+
+        &_txt{
+            & > *{
+                margin-bottom: 10px;
+            }
+            p{
+                font-size: 1.25rem;
+            }
+            &_price{
+                @include flex(center, space-between);
+                padding: 10px 0;
+                font-size: 1.25rem;
+
+                span:nth-child(2){
+                    font-size: 2rem;
+                    color: $main-color;
+                    font-weight: 600;
+                }
+            }
+        }
+        &_btn > *{
+            margin-bottom: 20px;
+        }
+    }
+    &_list{
+        flex-grow: 1;
+     
+    }
+    &_item{
+        @include flex(center, flex-start);
+        margin-bottom: 20px;
+       
+        &_image{
+            margin-right: 20px;
+
+            img{
+                height: 150px;
+            }
+        }
+
+        &_info{
+            @include flex(center, space-between);
+            flex-grow: 1;
+
+             @include mobile{
+                 @include flex(flex-start, center);
+                 flex-direction: column;
+
+                 & > *{
+                     margin-bottom: 10px;
+                 }
+             }
+            &_name{
+                @include mobile{
+                    width: 100%;
+                }
+                width: 40%;
+            }
+            &_name, &_price{
+
+                font-size: 1.25rem;
+            }
+
+            &_del{
+                font-size: 1.5rem;
+
+                i{
+                    cursor: pointer;
+                    &:hover{
+                        color: $main-color;
+                    }
+                }
+            }
+            
+        }
+
+    }
+}
